@@ -6,7 +6,7 @@ const { API_VERSION } = require("./constants");
 const app = express();
 
 // Import Rounting
-// ...
+const authRoutes = require("./router/auth");
 
 // Configure Body Parse
 app.use(bodyParser.urlencoded({extended: true}));
@@ -19,7 +19,7 @@ app.use(express.static("uploads"));
 app.use(cors())
 
 // Configure Routings
-// ...
+app.use(`/api/${API_VERSION}`,authRoutes)
 
 module.exports = app;
  
