@@ -9,8 +9,6 @@ const {
 } = require("./constants");
 
 
-const PORT = process.env.POST || 3977;
-
 mongoose.connect(
   `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/`,
   (error) => {
@@ -19,7 +17,7 @@ mongoose.connect(
 
 
     
-    app.listen(PORT,()=>{
+    app.listen(process.env.PORT || 5000,()=>{
       console.log("##################")
       console.log("#### API REST ####")
       console.log("##################")
