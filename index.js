@@ -15,6 +15,10 @@ mongoose.connect(
   `mongodb+srv://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/`,
   (error) => {
     if(error) throw error;
+
+
+
+    
     app.listen(PORT,()=>{
       console.log("##################")
       console.log("#### API REST ####")

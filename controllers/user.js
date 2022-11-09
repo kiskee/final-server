@@ -68,9 +68,9 @@ async function updateUser(req, res) {
 
   User.findByIdAndUpdate({ _id: id }, userData, (error) => {
     if (error) {
-      res.status(400).send({ msg: "Error al actualizar el usuario" });
+      res.status(400).send({ msg: "Failed to update user" });
     } else {
-      res.status(200).send({ msg: "Actualizacion correcta" });
+      res.status(200).send({ msg: "successful update" });
     }
   });
 }
@@ -80,9 +80,9 @@ async function deleteUser(req, res) {
 
   User.findByIdAndDelete(id, (error) => {
     if (error) {
-      res.status(400).send({ msg: "Error al eliminar el usuario" });
+      res.status(400).send({ msg: "Error deleting user" });
     } else {
-      res.status(200).send({ msg: "Usuario eliminado" });
+      res.status(200).send({ msg: "User Deleted" });
     }
   });
 }
